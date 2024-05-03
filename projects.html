@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Glori's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .project {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .project h3 {
+            color: #333;
+        }
+        .project p {
+            font-size: 16px;
+            color: #666;
+        }
+        .project a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        .project a:hover {
+            color: #0056b3;
+        }
+        .project img, .project iframe {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .responsive-iframe-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .responsive-iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="text-center mb-4">
+            <h1>My Projects</h1>
+        </header>
+        <nav class="nav justify-content-center mb-4">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <section id="projects">
+            <div class="row">
+                <!-- Project 1: Resume Screening App -->
+                <div class="col-md-6 mb-4">
+                    <div class="project">
+                        <h3>Resume Screening App</h3>
+                        <p>This project streamlines the process of resume screening, utilizing AI to enhance recruitment efficiency.</p>
+                        <div class="responsive-iframe-container">
+                            <iframe src="https://www.youtube.com/embed/Rdfr5bHj8IQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <a href="https://github.com/Glori-NS/ResumeScreeningApp">View Code on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Face & Object Recognition -->
+                <div class="col-md-6 mb-4">
+                    <div class="project">
+                        <h3>Face & Object Recognition</h3>
+                        <p>An advanced computer vision project to detect and recognize faces and objects.</p>
+                        <img src="images/CV_livingroom.png" alt="Object Detection, Living Room">
+                        <img src="images/Face&Object_dog.png" alt="Person & Dog Detection">
+                        <img src="images/face&object_cat.png" alt="Person & Cat Detection">
+                        <a href="https://github.com/Glori-NS/Face-ObjectRecognition">View Code on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Age Prediction -->
+                <div class="col-md-6 mb-4">
+                    <div class="project">
+                        <h3>Age Prediction</h3>
+                        <p>Utilizing deep learning models to predict the age of individuals from images.</p>
+                        <img src="images/AgePrediction_glori.png" alt="Age Prediction Glori">
+                        <img src="images/AgeDetection_ayla.png" alt="Age Detection Ayla">
+                        <a href="https://github.com/Glori-NS/Age-Prediction">View Code on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: ATS App -->
+                <div class="col-md-6 mb-4">
+                    <div class="project">
+                        <h3>ATS App</h3>
+                        <p>A comprehensive applicant tracking system designed to streamline the recruitment process.</p>
+                        <div class="responsive-iframe-container">
+                            <iframe src="https://www.youtube.com/embed/ue8zXVL6GjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"></iframe>
+                        </div>
+                        <a href="https://github.com/Glori-NS/JustScreen_project">View Code on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Little Lemon Restaurant App -->
+                <div class="col-md-6 mb-4">
+                    <div class="project">
+                        <h3>Little Lemon Restaurant App</h3>
+                        <p>A dynamic restaurant management app designed to improve customer service and operational efficiency.</p>
+                        <img src="images/LittleLemon.png" alt="Screenshot of Little Lemon Restaurant App">
+                        <a href="https://github.com/Glori-NS/LittleLemon-Capstone1">View Code on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="text-center mt-4">
+            <p>Connect with me on social media!</p>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
