@@ -3,44 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glori's Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Gloribeth Navarro - Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #282c34;
+            color: #fff;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background: url('images/background.jpg') no-repeat center center/cover;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        header h1 span {
+            color: #d98dc2;
+        }
+        .btn {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #d98dc2;
+            border-color: #d98dc2;
+        }
+        nav {
+            background: #333;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #d98dc2;
+        }
+    </style>
 </head>
 <body>
-    <h3> Gloribeth Navarro</h3>
-    <p> Application Development | Data Science</p>
-
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-    </header>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Portfolio</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
     </nav>
-    <section>
-       <p>"Hello there! I'm Glori, a Master of Computer Science graduate student at Full Sail University, est. July 2024. I am currently based in Orlando, FL, but am open to relocating if the right opportunity knocks. My academic and professional journey is a blend of software engineering, data science, and artificial intelligence—fields where I not only thrive but innovate.</p>
-
-        <p>With a rich background in technical recruitment and human resources, I've had the privilege of shaping hiring strategies and leading dynamic teams at prestigious organizations such as Amazon Web Services, Uber Technologies, and the University of Central Florida. These experiences have sharpened my ability to spot talent and forge robust, data-driven solutions in complex scenarios.</p>
-        
-        <p>My toolbox is filled with powerful technologies like Python, TensorFlow, and PyTorch, which I wield to craft everything from user-friendly web applications to cutting-edge computer vision systems. Whether deploying Django for robust web architectures or utilizing Tableau for insightful data visualizations, I am all about leveraging technology to solve real-world problems creatively.</p>
-        
-        <p>Education-wise, I complement my tech expertise with a solid business foundation, holding an MBA from Capella University alongside a Bachelor's of Science from Berkeley College. These credentials have been instrumental in merging technical prowess with strategic acumen.</p>
-        
-        <p>Passionate about fostering diversity and inclusion within the tech landscape, I aim to continue advocating for equitable practices and opportunities in my future endeavors.</p>
-        
-        <p>I am eager to contribute my blend of skills and enthusiasm to a forward-thinking organization that values innovation in software engineering or data science. Let's collaborate to create something truly transformational!"</p>
-
-    </section>
-
-    <footer>
-        <p>Connect with me on social media!</p>
-    </footer>
-    <script src="js/script.js"></script>
+    <header>
+        <div>
+            <h1>Hello, I'm <span>Gloribeth Navarro</span>. </h1>
+            <h1>I am an aspiring Data Scientist and a Software Engineer.</h1>
+            <h1> </h1>
+            <a href="projects.html" class="btn">View my work</a>
+        </div>
+    </header>
 </body>
 </html>

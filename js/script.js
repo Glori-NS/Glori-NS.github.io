@@ -1,3 +1,4 @@
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -30,6 +31,30 @@ form.addEventListener('submit', function(e) {
 
     // Only proceed with form submission if all validations passed
     if (valid) {
+        alert('Message sent successfully!');
         form.submit();
     }
+});
+
+// Fade-in effect for elements with the class 'fade-in'
+document.addEventListener('DOMContentLoaded', () => {
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    fadeInElements.forEach(element => {
+        element.style.opacity = 0;
+        element.style.transition = 'opacity 2s ease-in-out';
+        element.style.opacity = 1;
+    });
+});
+
+// Hover effect for project cards
+const projectCards = document.querySelectorAll('.project');
+projectCards.forEach(card => {
+    card.addEventListener('mouseover', () => {
+        card.style.transform = 'translateY(-10px)';
+        card.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+    });
+    card.addEventListener('mouseout', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+    });
 });

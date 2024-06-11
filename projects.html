@@ -3,38 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Glori's Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Projects - Gloribeth Navarro</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #d98dc2;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #d98dc2;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
         .project {
-            background-color: #f9f9f9;
+            background-color: white;
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .project h3 {
-            color: #333;
+            color: #d98dc2;
         }
         .project p {
             font-size: 16px;
             color: #666;
         }
         .project a {
-            color: #007bff;
+            color: #d98dc2;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease-in-out;
         }
         .project a:hover {
-            color: #0056b3;
-        }
-        .project img, .project iframe {
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-            border-radius: 5px;
+            color: #b773b8;
         }
         .responsive-iframe-container {
             position: relative;
@@ -49,18 +79,54 @@
             width: 100%;
             height: 100%;
         }
+        .scrollable-container {
+            display: flex;
+            overflow-x: scroll;
+            padding: 10px;
+        }
+        .scrollable-container img {
+            max-height: 200px;
+            margin-right: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        .badge-list a {
+            display: block;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Portfolio</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1 class="fade-in">My Projects</h1>
+    </header>
     <div class="container">
-        <header class="text-center mb-4">
-            <h1>My Projects</h1>
-        </header>
-        <nav class="nav justify-content-center mb-4">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="projects.html">Projects</a>
-            <a class="nav-link" href="contact.html">Contact</a>
-        </nav>
         <section id="projects">
             <div class="row">
                 <!-- Project 1: Resume Screening App -->
@@ -80,9 +146,11 @@
                     <div class="project">
                         <h3>Face & Object Recognition</h3>
                         <p>An advanced computer vision project to detect and recognize faces and objects.</p>
-                        <img src="images/CV_livingroom.png" alt="Object Detection, Living Room">
-                        <img src="images/Face&Object_dog.png" alt="Person & Dog Detection">
-                        <img src="images/face&object_cat.png" alt="Person & Cat Detection">
+                        <div class="scrollable-container">
+                            <img src="images/CV_livingroom.png" alt="Object Detection, Living Room">
+                            <img src="images/Face&Object_dog.png" alt="Person & Dog Detection">
+                            <img src="images/face&object_cat.png" alt="Person & Cat Detection">
+                        </div>
                         <a href="https://github.com/Glori-NS/Face-ObjectRecognition">View Code on GitHub</a>
                     </div>
                 </div>
@@ -92,8 +160,10 @@
                     <div class="project">
                         <h3>Age Prediction</h3>
                         <p>Utilizing deep learning models to predict the age of individuals from images.</p>
-                        <img src="images/AgePrediction_glori.png" alt="Age Prediction Glori">
-                        <img src="images/AgeDetection_ayla.png" alt="Age Detection Ayla">
+                        <div class="scrollable-container">
+                            <img src="images/AgePrediction_glori.png" alt="Age Prediction Glori">
+                            <img src="images/AgeDetection_ayla.png" alt="Age Detection Ayla">
+                        </div>
                         <a href="https://github.com/Glori-NS/Age-Prediction">View Code on GitHub</a>
                     </div>
                 </div>
@@ -104,7 +174,7 @@
                         <h3>ATS App</h3>
                         <p>A comprehensive applicant tracking system designed to streamline the recruitment process.</p>
                         <div class="responsive-iframe-container">
-                            <iframe src="https://www.youtube.com/embed/ue8zXVL6GjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"></iframe>
+                            <iframe src="https://www.youtube.com/embed/ue8zXVL6GjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen></iframe>
                         </div>
                         <a href="https://github.com/Glori-NS/JustScreen_project">View Code on GitHub</a>
                     </div>
@@ -115,16 +185,59 @@
                     <div class="project">
                         <h3>Little Lemon Restaurant App</h3>
                         <p>A dynamic restaurant management app designed to improve customer service and operational efficiency.</p>
-                        <img src="images/LittleLemon.png" alt="Screenshot of Little Lemon Restaurant App">
+                        <img src="images/LittleLemon.png" alt="Screenshot of Little Lemon Restaurant App" style="width: 100%; height: auto;">
                         <a href="https://github.com/Glori-NS/LittleLemon-Capstone1">View Code on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Posts -->
+                <div class="col-md-12 mb-4">
+                    <h3>LinkedIn Posts</h3>
+                    <p>Explore my LinkedIn posts showcasing various Data Science projects, including machine learning models, data visualization techniques, and insights derived from complex datasets.</p>
+                    <div class="project">
+                        <div class="responsive-iframe-container">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7141768744992718848" frameborder="0" allowfullscreen="" title="LinkedIn Post 1"></iframe>
+                        </div>
+                        <div class="responsive-iframe-container">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7108846422522748928" frameborder="0" allowfullscreen="" title="LinkedIn Post 2"></iframe>
+                        </div>
+                        <div class="responsive-iframe-container">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7107167180730822656" frameborder="0" allowfullscreen="" title="LinkedIn Post 3"></iframe>
+                        </div>
+                        <div class="responsive-iframe-container">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7106282189507420160" frameborder="0" allowfullscreen="" title="LinkedIn Post 4"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="col-md-12 mb-4">
+                    <h3>Certifications</h3>
+                    <div class="project">
+                        <a href="/mnt/data/image.png" target="_blank">Walmart Certificate</a><br>
+                        <a href="/mnt/data/image.png" target="_blank">PWC Certificate</a><br>
+                        <a href="/mnt/data/image.png" target="_blank">J.P. Morgan Certificate</a><br>
+                        <a href="/mnt/data/image.png" target="_blank">Lyft Certificate</a>
+                    </div>
+                </div>
+
+                <!-- Microsoft Badges -->
+                <div class="col-md-12 mb-4">
+                    <h3>Microsoft Badges</h3>
+                    <div class="project badge-list">
+                        <a href="https://learn.microsoft.com/api/achievements/share/en-us/GloribethNavarro-6703/HRKEPTJ8?sharingId=64BA92144F24A7AF" target="_blank">Intro to Data Engineering</a>
+                        <a href="https://learn.microsoft.com/api/achievements/share/en-us/GloribethNavarro-6703/PSW3DV34?sharingId=64BA92144F24A7AF" target="_blank">Introduction to Azure Data Lake Storage</a>
+                        <a href="https://learn.microsoft.com/api/achievements/share/en-us/GloribethNavarro-6703/PSWTUYY4?sharingId=64BA92144F24A7AF" target="_blank">Introduction to Azure Synapse Analytics</a>
+                        <a href="https://learn.microsoft.com/api/achievements/share/en-us/GloribethNavarro-6703/7P6MWMSZ?sharingId=64BA92144F24A7AF" target="_blank">Query Data in the Lake using Azure Synapse Serverless SQL Pools</a>
+                        <a href="https://learn.microsoft.com/api/achievements/share/en-us/GloribethNavarro-6703/8ABXDRYW?sharingId=64BA92144F24A7AF" target="_blank">Use Azure Synapse Serverless SQL Pools for Transforming the Data in the Lake</a>
                     </div>
                 </div>
             </div>
         </section>
-        <footer class="text-center mt-4">
-            <p>Connect with me on social media!</p>
-        </footer>
     </div>
+    <footer>
+        <p>Connect with me on social media!</p>
+    </footer>
     <script src="js/script.js"></script>
 </body>
 </html>

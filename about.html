@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Gloribeth Navarro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #d98dc2;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #d98dc2;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .about-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .about-section img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .about-section h2 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+        .about-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .resume-section {
+            margin-top: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .resume-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #d98dc2;
+        }
+        .resume-section .category {
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #d98dc2;
+        }
+        .resume-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .resume-section li {
+            margin-bottom: 10px;
+        }
+        .resume-section .sub-category {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+        }
+    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    ...
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Portfolio</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1>About Me</h1>
+    </header>
+    <div class="container">
+        <section class="about-section">
+            <img src="images/glori.jpeg" alt="Gloribeth Navarro">
+            <h2>Who am I?</h2>
+            <p>I am a Senior Human Resource Professional and Technical Recruiter. I am currently working at the University of Central Florida leading recruitment efforts throughout Academic Affairs and UCF IT. I was previously at Amazon supporting Utility Computing's global efforts of hiring fungible Software Development Engineers across the various platforms. My curiosity fueled my desire to learn about Software Development and completing a Master's in Computer Science. I am now pursuing a career change where I can apply the skills I've learned in a more technical role.</p>
+        </section>
+        <section class="resume-section">
+            <h3>Resume</h3>
+            <div class="pdf-container">
+                <iframe src="/mnt/data/Navarro_2024.pdf" type="application/pdf"></iframe>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>Connect with me on social media!</p>
+    </footer>
+</body>
+</html>
