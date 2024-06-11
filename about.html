@@ -6,6 +6,7 @@
     <title>About Me - Gloribeth Navarro</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://mozilla.github.io">
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <style>
         body {
@@ -64,28 +65,24 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .resume-section h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 20px;
             color: #d98dc2;
         }
-        .resume-section .category {
-            font-weight: bold;
+        .pdf-container {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
             margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-            color: #d98dc2;
+            text-align: center;
         }
-        .resume-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .resume-section li {
-            margin-bottom: 10px;
-        }
-        .resume-section .sub-category {
-            font-weight: bold;
-            margin-top: 10px;
-            color: #333;
+        #pdf-viewer {
+            width: 100%;
+            max-width: 800px;
+            height: 800px;
+            border: none;
+            display: none; /* Initially hidden until PDF is loaded */
+            margin: 0 auto;
         }
         footer {
             text-align: center;
@@ -94,10 +91,6 @@
             color: white;
         }
     </style>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    ...
 </head>
 <body>
     <nav>
@@ -125,12 +118,43 @@
         <section class="resume-section">
             <h3>Resume</h3>
             <div class="pdf-container">
-                <iframe src="/mnt/data/Navarro_2024.pdf" type="application/pdf"></iframe>
+                <canvas id="pdf-viewer"></canvas>
+                <div id="loading-pdf">Loading...</div>
             </div>
         </section>
     </div>
     <footer>
         <p>Connect with me on social media!</p>
     </footer>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+        var url = 'Navarro_2024.pdf';
+        var loadingTask = pdfjsLib.getDocument(url);
+        loadingTask.promise.then(function(pdf) {
+            console.log('PDF loaded');
+            pdf.getPage(1).then(function(page) {
+                console.log('Page loaded');
+                var scale = 1.5;
+                var viewport = page.getViewport({scale: scale});
+                var canvas = document.getElementById('pdf-viewer');
+                var context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                var renderTask = page.render({
+                    canvasContext: context,
+                    viewport: viewport
+                });
+                renderTask.promise.then(function() {
+                    console.log('Page rendered');
+                    document.getElementById('loading-pdf').style.display = 'none';
+                    canvas.style.display = 'block';
+                });
+            });
+        }, function(reason) {
+            console.error('Error: ' + reason);
+            document.getElementById('loading-pdf').textContent = 'Failed to load PDF. Please try again later.';
+        });
+    </script>
 </body>
 </html>

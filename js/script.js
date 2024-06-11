@@ -2,7 +2,7 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
@@ -15,17 +15,21 @@ form.addEventListener('submit', function(e) {
     let valid = true;
     const email = document.querySelector('input[type="email"]');
     const message = document.querySelector('textarea');
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Regular expression for email validation
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+    // Reset visual feedback
+    email.style.border = '1px solid #ccc';
+    message.style.border = '1px solid #ccc';
 
     // Check email validity
     if (!email.value.match(emailRegex)) {
-        alert('Please enter a valid email address.');
+        email.style.border = '2px solid red';
         valid = false;
     }
 
     // Check if message is not empty and has at least 30 characters
     if (message.value.trim().length < 30) {
-        alert('Your message should have at least 30 characters.');
+        message.style.border = '2px solid red';
         valid = false;
     }
 
@@ -49,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Hover effect for project cards
 const projectCards = document.querySelectorAll('.project');
 projectCards.forEach(card => {
+    card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
     card.addEventListener('mouseover', () => {
         card.style.transform = 'translateY(-10px)';
         card.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
